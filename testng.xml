@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NML Android Local" verbose="1">
+    <test name="Accessibility - Font Size">
+        <classes>
+            <class name="com.applitools.nml.AccessibilityTest"/>
+        </classes>
+    </test>
+    <test name="AnalyticsX - Login Flow">
+        <classes>
+            <class name="com.applitools.nml.AnalyticsXTest"/>
+        </classes>
+    </test>
+</suite>
