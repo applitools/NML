@@ -1,6 +1,7 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.appium.Eyes;
+import com.applitools.eyes.selenium.fluent.Target;
 import io.appium.java_client.ios.IOSDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -43,7 +44,7 @@ public class AccessibilityTest extends BaseTest {
     public void normalFontSize() throws Exception {
         launchWithFontSize("UICTContentSizeCategoryL");
         eyes.open(driver, EYES_APP_NAME, "Accessibility - Normal Font Size");
-        eyes.checkWindow("Normal Font");
+        eyes.check(Target.window().withName("Normal Font"));
         eyes.close();
     }
 
@@ -51,7 +52,7 @@ public class AccessibilityTest extends BaseTest {
     public void largeFontSize() throws Exception {
         launchWithFontSize("UICTContentSizeCategoryAccessibilityXXXL");
         eyes.open(driver, EYES_APP_NAME, "Accessibility - Large Font Size");
-        eyes.checkWindow("Large Font");
+        eyes.check(Target.window().withName("Large Font"));
         eyes.close();
     }
 }
