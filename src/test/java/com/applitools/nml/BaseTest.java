@@ -1,7 +1,7 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.BatchInfo;
-import com.applitools.eyes.Configuration;
+import com.applitools.eyes.config.Configuration;
 import com.applitools.eyes.appium.Eyes;
 import io.appium.java_client.ios.IOSDriver;
 import io.github.cdimascio.dotenv.Dotenv;
