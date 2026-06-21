@@ -2,10 +2,9 @@ package com.applitools.nml;
 
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.EyesRunner;
-import com.applitools.eyes.RunnerOptions;
+import com.applitools.eyes.appium.AppiumRunner;
 import com.applitools.eyes.appium.Eyes;
 import com.applitools.eyes.config.Configuration;
-import com.applitools.eyes.visualgrid.services.VisualGridRunner;
 import io.appium.java_client.ios.IOSDriver;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -44,9 +43,7 @@ public class BaseTest {
     @BeforeSuite
     public void setUpSuite() {
         batch  = new BatchInfo(EYES_BATCH_NAME);
-        runner = MULTI_DEVICE_ENABLED
-                ? new VisualGridRunner(new RunnerOptions().testConcurrency(5))
-                : null;
+        runner = new AppiumRunner();
     }
 
     @AfterSuite
