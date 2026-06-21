@@ -1,8 +1,11 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.BatchInfo;
-import com.applitools.eyes.config.Configuration;
+import com.applitools.eyes.EyesRunner;
+import com.applitools.eyes.RunnerOptions;
 import com.applitools.eyes.appium.Eyes;
+import com.applitools.eyes.config.Configuration;
+import com.applitools.eyes.visualgrid.services.VisualGridRunner;
 import io.appium.java_client.ios.IOSDriver;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,15 +19,17 @@ public class BaseTest {
 
     protected static final Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
-    protected static final String APPLITOOLS_API_KEY = env("APPLITOOLS_API_KEY");
-    protected static final String EYES_APP_NAME      = env("EYES_APP_NAME",   "NML iOS Sample");
-    protected static final String EYES_BATCH_NAME    = env("EYES_BATCH_NAME", "NML iOS Local Tests");
-    protected static final String APPIUM_URL         = env("APPIUM_URL",      "http://127.0.0.1:4723");
-    protected static final String DEVICE_NAME        = env("DEVICE_NAME",     "iPhone 16");
-    protected static final String DEVICE_UDID        = env("DEVICE_UDID",     "");
-    protected static final String PLATFORM_VERSION   = env("PLATFORM_VERSION","18.0");
+    protected static final String  APPLITOOLS_API_KEY    = env("APPLITOOLS_API_KEY");
+    protected static final String  EYES_APP_NAME         = env("EYES_APP_NAME",          "NML iOS Sample");
+    protected static final String  EYES_BATCH_NAME       = env("EYES_BATCH_NAME",         "NML iOS Local Tests");
+    protected static final String  APPIUM_URL            = env("APPIUM_URL",              "http://127.0.0.1:4723");
+    protected static final String  DEVICE_NAME           = env("DEVICE_NAME",             "iPhone 16");
+    protected static final String  DEVICE_UDID           = env("DEVICE_UDID",             "");
+    protected static final String  PLATFORM_VERSION      = env("PLATFORM_VERSION",        "18.0");
+    protected static final boolean MULTI_DEVICE_ENABLED  = Boolean.parseBoolean(env("NML_MULTI_DEVICE_ENABLED", "false"));
 
-    protected static BatchInfo batch;
+    protected static BatchInfo   batch;
+    protected static EyesRunner  runner;
 
     protected static String env(String key) {
         String val = dotenv.get(key, null);
@@ -37,13 +42,16 @@ public class BaseTest {
     }
 
     @BeforeSuite
-    public void setUpBatch() {
-        batch = new BatchInfo(EYES_BATCH_NAME);
+    public void setUpSuite() {
+        batch  = new BatchInfo(EYES_BATCH_NAME);
+        runner = MULTI_DEVICE_ENABLED
+                ? new VisualGridRunner(new RunnerOptions().testConcurrency(5))
+                : null;
     }
 
     @AfterSuite
-    public void tearDownBatch() {
-        // no-op — Eyes closes per test
+    public void tearDownSuite() {
+        if (runner != null) runner.getAllTestResults(false);
     }
 
     protected IOSDriver createDriver(String appPath, String bundleId) throws Exception {
@@ -69,7 +77,7 @@ public class BaseTest {
         config.setBatch(batch);
         config.setSendDom(true);
 
-        Eyes eyes = new Eyes();
+        Eyes eyes = runner != null ? new Eyes(runner) : new Eyes();
         eyes.setConfiguration(config);
         return eyes;
     }
