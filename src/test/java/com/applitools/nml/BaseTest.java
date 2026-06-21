@@ -55,7 +55,7 @@ public class BaseTest {
         caps.setCapability("appium:platformVersion",   PLATFORM_VERSION);
         caps.setCapability("appium:app",               appPath);
         caps.setCapability("appium:bundleId",          bundleId);
-        caps.setCapability("appium:noReset",           false);
+        caps.setCapability("appium:fullReset",         true);
         caps.setCapability("appium:newCommandTimeout", 300);
 
         IOSDriver driver = new IOSDriver(new URL(APPIUM_URL), caps);
