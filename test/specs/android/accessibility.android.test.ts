@@ -5,6 +5,7 @@ describe('Accessibility Android NML - LambdaTest', () => {
 
   before(async () => {
     eyes = new Eyes();
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
 
     const config = new Configuration();
     config.setUseDom(true);
