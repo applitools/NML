@@ -28,6 +28,8 @@ describe('Accessibility Android NML - LambdaTest', () => {
     await eyes.check('Main Screen', Target.window().fully());
     console.log('Checked: Main Screen');
 
+    await eyes.check('Main Screen | Fully', Target.window().fully());
+
     await eyes.close(false);
     console.log('Eyes closed');
   });
