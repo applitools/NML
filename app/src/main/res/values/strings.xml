@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Accessibility Test</string>
+    <string name="hero_eyebrow">Accessibility Test</string>
+    <string name="hero_title">Dynamic Type Playground</string>
+    <string name="hero_subtitle">Increase the system font size, enable bold text, or turn on a screen reader to check whether this screen remains readable and usable.</string>
+
+    <string name="badge_text_size_label">Current text size</string>
+    <string name="badge_font_scale_label">Font scale</string>
+
+    <string name="metric_font_scale">System font scale</string>
+    <string name="metric_checklist">Checklist</string>
+
+    <string name="section_reading_sample">Reading Sample</string>
+    <string name="reading_sample_body">This card is meant to expose text wrapping, line height, and spacing issues. At larger accessibility sizes, content should grow without clipping or overlapping nearby controls.</string>
+    <string name="reading_sample_tip">Tip: test Android Display size / Font size settings.</string>
+
+    <string name="section_checklist">Basic Test Checklist</string>
+
+    <string name="section_input">Input and Controls</string>
+    <string name="label_tester_name">Tester name</string>
+    <string name="hint_tester_name">Example: Shreya</string>
+    <string name="label_reminders">Enable reminders</string>
+    <string name="caption_reminders">Useful for testing accessible labels and switch state changes.</string>
+
+    <string name="section_priority">Test Priority</string>
+    <string name="priority_body">Select the area you are validating first. The selected item has a stronger visual state and exposes checked state to assistive tech.</string>
+    <string name="priority_standard">Standard</string>
+    <string name="priority_large_text">Large text</string>
+    <string name="priority_screen_reader">Screen reader</string>
+
+    <string name="btn_start_test">Start Test</string>
+    <string name="btn_reset">Reset</string>
+
+    <!-- Visual AI Playground -->
+    <string name="playground_title">Visual AI Playground</string>
+    <string name="playground_subtitle">Purpose-built screen for validating Applitools Visual AI algorithms.</string>
+
+    <string name="strict_match_title">Strict Match Validation</string>
+    <string name="strict_match_initial_text">Initial Strict Validation Text</string>
+
+    <string name="layout_match_title">Layout Match Validation</string>
+
+    <string name="ignore_colors_title">Ignore Colors Validation</string>
+    <string name="ignore_colors_body">This card\'s background color is randomized on every launch.</string>
+
+    <string name="dynamic_match_title">Dynamic Match Validation</string>
+    <string name="dynamic_email_value">Email: user@example.com</string>
+    <string name="dynamic_amount_value">Amount: $1294.22</string>
+
+    <string name="floating_region_title">Floating Region Validation</string>
+
+    <string name="ignore_region_title">Ignore Region Validation</string>
+
+    <string name="exact_match_title">Exact Match Validation</string>
+    <string name="exact_match_description">All pixels must match precisely — no tolerance.</string>
+    <string name="exact_match_build_value">Build: 3.14.159</string>
+
+    <string name="scroll_test_card_title">Scroll Test Card %1$d</string>
+</resources>
