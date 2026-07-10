@@ -25,7 +25,7 @@ final class NMLMultiDeviceCaptureTests: XCTestCase {
         Eyes.setMobileCapabilities(app, apiKey: apiKey)
         app.launch()
 
-        let batch: BatchInfo = BatchInfo(name: "Accessibility | XCUITest | NML Multi Device")
+        let batch: BatchInfo = BatchInfo(name: "XCUITest | Accessibility | NML Multi Device")
         batch.batchId = TestBatch.id
 
         let config = Configuration()
@@ -49,5 +49,17 @@ final class NMLMultiDeviceCaptureTests: XCTestCase {
     // Renders the initial screen across every configured device.
     func testMultiDeviceScreens() throws {
         eyes.check(withTag:"Multi device – default", andSettings: Target.window())
+
+        // The entry point sits below the fold at the bottom of the form.
+        app.swipeUp()
+        app.swipeUp()
+
+        let playgroundButton = app.buttons["openVisualAIPlaygroundButton"]
+        XCTAssertTrue(playgroundButton.waitForExistence(timeout: 5))
+        playgroundButton.tap()
+
+        let playgroundScrollView = app.scrollViews["visualAIPlaygroundScrollView"]
+        XCTAssertTrue(playgroundScrollView.waitForExistence(timeout: 5))
+        eyes.check(withTag: "Visual AI Playground", andSettings: Target.window().fully())
     }
 }

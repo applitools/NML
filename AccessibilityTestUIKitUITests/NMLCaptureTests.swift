@@ -23,7 +23,7 @@ final class NMLCaptureTests: XCTestCase {
         Eyes.setMobileCapabilities(app, apiKey: apiKey)
         app.launch()
 
-        let batch: BatchInfo = BatchInfo(name : "Accessibility | XCUITest | NML ")
+        let batch: BatchInfo = BatchInfo(name : "XCUITest | Accessibility | NML ")
         batch.batchId = TestBatch.id
 
         let config = Configuration()
@@ -42,5 +42,17 @@ final class NMLCaptureTests: XCTestCase {
     // Full-window NML capture of the initial screen.
     func testNMLScreens() throws {
         eyes.check(withTag:"Full screen – default", andSettings: Target.window())
+
+        // The entry point sits below the fold at the bottom of the form.
+        app.swipeUp()
+        app.swipeUp()
+
+        let playgroundButton = app.buttons["openVisualAIPlaygroundButton"]
+        XCTAssertTrue(playgroundButton.waitForExistence(timeout: 5))
+        playgroundButton.tap()
+
+        let playgroundScrollView = app.scrollViews["visualAIPlaygroundScrollView"]
+        XCTAssertTrue(playgroundScrollView.waitForExistence(timeout: 5))
+        eyes.check(withTag: "Visual AI Playground", andSettings: Target.window().fully())
     }
 }

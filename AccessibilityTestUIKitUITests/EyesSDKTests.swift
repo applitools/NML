@@ -12,7 +12,7 @@ final class EyesSDKTests: XCTestCase {
         app = XCUIApplication()
         app.launch()
 
-        let batch: BatchInfo = BatchInfo(name: "Accessibility | XCUITest | Eyes SDK")
+        let batch: BatchInfo = BatchInfo(name: "XCUITest | Accessibility | Eyes SDK")
         batch.batchId = TestBatch.id
 
         let config = Configuration()
@@ -30,7 +30,7 @@ final class EyesSDKTests: XCTestCase {
 
     // Captures the initial screen exactly as the app launches.
     func testDefaultState() throws {
-        eyes.checkWindow(withTag:"Initial screen")
+        eyes.check(withTag: "Initial screen", andSettings: Target.window())
 
         // Query across all element types since XCUITest inconsistently
         // classifies this row as either "Other" or "StaticText".
@@ -39,15 +39,15 @@ final class EyesSDKTests: XCTestCase {
             .firstMatch
         XCTAssertTrue(screenReaderRow.waitForExistence(timeout: 5))
         screenReaderRow.tap()
-        eyes.checkWindow(withTag:"Screen reader row toggled on")
+        eyes.check(withTag: "Screen reader row toggled on", andSettings: Target.window())
 
         app.buttons["Standard priority"].tap()
-        eyes.checkWindow(withTag:"Standard priority selected")
+        eyes.check(withTag: "Standard priority selected", andSettings: Target.window())
 
         let field = app.textFields["Tester name"]
         field.tap()
         field.typeText("Shreya")
-        eyes.checkWindow(withTag:"Tester name entered")
+        eyes.check(withTag: "Tester name entered", andSettings: Target.window())
 
         // Dismiss the keyboard so it doesn't cover "Start accessibility test"
         // further down the screen.
@@ -60,7 +60,34 @@ final class EyesSDKTests: XCTestCase {
         Thread.sleep(forTimeInterval: 0.3)
 
         app.buttons["Reset accessibility test form"].tap()
-        eyes.checkWindow(withTag:"After reset")
+        eyes.check(withTag: "After reset", andSettings: Target.window())
+
+        // The entry point sits below the fold at the bottom of the form.
+        app.swipeUp()
+        app.swipeUp()
+
+        let playgroundButton = app.buttons["openVisualAIPlaygroundButton"]
+        XCTAssertTrue(playgroundButton.waitForExistence(timeout: 5))
+        playgroundButton.tap()
+
+        let playgroundScrollView = app.scrollViews["visualAIPlaygroundScrollView"]
+        XCTAssertTrue(playgroundScrollView.waitForExistence(timeout: 5))
+        eyes.check(withTag: "Visual AI Playground", andSettings: Target.window())
+
+        // Second checkpoint: edit the Strict Match card's input so this
+        // checkpoint's baseline exercises Eyes' strict (pixel-exact) matching
+        // against a real content change, not just a fresh screen.
+        let strictInput = app.textFields["strictMatchInput"]
+        XCTAssertTrue(strictInput.waitForExistence(timeout: 5))
+        strictInput.tap()
+        if let existingText = strictInput.value as? String, !existingText.isEmpty {
+            let deleteKeys = String(repeating: XCUIKeyboardKey.delete.rawValue, count: existingText.count)
+            strictInput.typeText(deleteKeys)
+        }
+        strictInput.typeText("Eyes Visual AI Playground")
+        app.keyboards.buttons["Done"].tap()
+
+        eyes.check(withTag: "Visual AI Playground - Strict match updated", andSettings: Target.window())
     }
 
 }

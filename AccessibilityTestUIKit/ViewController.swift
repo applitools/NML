@@ -125,6 +125,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(buildInputCard())
         stackView.addArrangedSubview(buildPriorityCard())
         stackView.addArrangedSubview(buildActionRow())
+        stackView.addArrangedSubview(buildVisualAIPlaygroundLink())
     }
 
     // MARK: Hero Card
@@ -569,6 +570,28 @@ class ViewController: UIViewController {
         ])
 
         return container
+    }
+
+    // MARK: Visual AI Playground Link
+
+    private func buildVisualAIPlaygroundLink() -> UIView {
+        var config = UIButton.Configuration.plain()
+        config.title = "Open Visual AI Playground →"
+        config.baseForegroundColor = colorBlue
+        config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 4, bottom: 12, trailing: 4)
+        let button = UIButton(configuration: config)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body).withWeight(.bold)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.contentHorizontalAlignment = .leading
+        button.accessibilityIdentifier = "openVisualAIPlaygroundButton"
+        button.accessibilityLabel = "Open Visual AI Playground"
+        button.accessibilityHint = "Shows a screen built to demonstrate Applitools Eyes match levels"
+        button.addTarget(self, action: #selector(openVisualAIPlaygroundTapped), for: .touchUpInside)
+        return button
+    }
+
+    @objc private func openVisualAIPlaygroundTapped() {
+        navigationController?.pushViewController(VisualAIPlaygroundViewController(), animated: true)
     }
 
     // MARK: Helpers

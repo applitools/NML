@@ -14,6 +14,7 @@
 		AA000001000000000000001A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000001B /* AppDelegate.swift */; };
 		AA000001000000000000002A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000002B /* SceneDelegate.swift */; };
 		AA000001000000000000003A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000003B /* ViewController.swift */; };
+		9B00000100000000000000CA /* VisualAIPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00000100000000000000CB /* VisualAIPlaygroundViewController.swift */; };
 		BB000001000000000000001A /* EyesSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000001B /* EyesSDKTests.swift */; };
 		BB000001000000000000002A /* NMLCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000002B /* NMLCaptureTests.swift */; };
 		BB000001000000000000003A /* NMLMultiDeviceCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001000000000000003B /* NMLMultiDeviceCaptureTests.swift */; };
@@ -45,6 +46,7 @@
 		AA000001000000000000001B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA000001000000000000002B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA000001000000000000003B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B00000100000000000000CB /* VisualAIPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualAIPlaygroundViewController.swift; sourceTree = "<group>"; };
 		AA000001000000000000004B /* AccessibilityTestUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessibilityTestUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB000001000000000000001B /* EyesSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesSDKTests.swift; sourceTree = "<group>"; };
 		BB000001000000000000002B /* NMLCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMLCaptureTests.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				AA000001000000000000001B /* AppDelegate.swift */,
 				AA000001000000000000002B /* SceneDelegate.swift */,
 				AA000001000000000000003B /* ViewController.swift */,
+				9B00000100000000000000CB /* VisualAIPlaygroundViewController.swift */,
 			);
 			path = AccessibilityTestUIKit;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				AA000001000000000000001A /* AppDelegate.swift in Sources */,
 				AA000001000000000000002A /* SceneDelegate.swift in Sources */,
 				AA000001000000000000003A /* ViewController.swift in Sources */,
+				9B00000100000000000000CA /* VisualAIPlaygroundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
