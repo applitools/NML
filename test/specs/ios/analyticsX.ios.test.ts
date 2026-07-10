@@ -8,7 +8,7 @@ describe('AnalyticsX iOS NML - LambdaTest', () => {
   before(async () => {
     eyes = new Eyes();
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS LambdaTest | iOS AnalyticsX'));
+    eyes.setBatch(new BatchInfo('TS SauceLabs | NML | iOS AnalyticsX'));
     await eyes.open(browser, 'LambdaTest iOS AnalyticsX App', 'iOS AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
