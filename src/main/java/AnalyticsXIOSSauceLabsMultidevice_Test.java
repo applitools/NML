@@ -112,7 +112,7 @@ public class AnalyticsXIOSSauceLabsMultidevice_Test {
         eyes.setConfiguration(config);
 
 
-        eyes.setBatch(new BatchInfo("Java Sauce Labs | iOS AnalyticsX"));
+        eyes.setBatch(new BatchInfo("Java SauceLabs | NML | iOS AnalyticsX | Multi Device"));
 
         try {
 

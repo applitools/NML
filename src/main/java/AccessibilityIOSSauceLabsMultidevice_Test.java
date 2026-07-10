@@ -102,7 +102,7 @@ public class AccessibilityIOSSauceLabsMultidevice_Test {
 
         eyes.setConfiguration(config);
 
-        eyes.setBatch(new BatchInfo("Java Sauce Labs | iOS Accessibility"));
+        eyes.setBatch(new BatchInfo("Java SauceLabs | NML | iOS Accessibility | Multi Device"));
 
         try {
 
