@@ -107,7 +107,7 @@ public class AccessibilityAndroidLambda_NMLMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java LambdaTest | NML| Android Accessibility"));
+        config.setBatch(new BatchInfo("Java LambdaTest | NML | Android Accessibility | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25(), AndroidMultiDeviceTarget.Galaxy_S25_Ultra(), AndroidMultiDeviceTarget.Pixel_9());

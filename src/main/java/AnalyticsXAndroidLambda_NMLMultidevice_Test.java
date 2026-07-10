@@ -117,7 +117,7 @@ public class AnalyticsXAndroidLambda_NMLMultidevice_Test {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java LambdaTest | NML | Android AnalyticsX"));
+        config.setBatch(new BatchInfo("Java LambdaTest | NML | Android AnalyticsX | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25(), AndroidMultiDeviceTarget.Galaxy_S25_Ultra(), AndroidMultiDeviceTarget.Pixel_9());
