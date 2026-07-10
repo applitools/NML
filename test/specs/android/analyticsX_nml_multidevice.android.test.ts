@@ -12,7 +12,7 @@ describe('AnalyticsX Android NML - Multi Device', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    config.setBatch(new BatchInfo('TS Perfecto | NML | AnalyticsX | Multi Device'));
+    config.setBatch(new BatchInfo('TS Perfecto | NML | Android AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget('Galaxy S25');
 
     eyes.setConfiguration(config);

@@ -14,7 +14,7 @@ describe('Accessibility Android NML - Multi Device', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Perfecto | NML | Accessibility | Multi Device'));
+    eyes.setBatch(new BatchInfo('TS Perfecto | NML | Android Accessibility | Multi Device'));
 
     await driver.pause(5000);
 
