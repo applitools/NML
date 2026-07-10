@@ -117,7 +117,7 @@ public class AnalyticsXIOSLambda_NML_Multidevice_Test {
         eyes.setConfiguration(config);
 
 
-        eyes.setBatch(new BatchInfo("Java LambdaTest | iOS AnalyticsX"));
+        eyes.setBatch(new BatchInfo("Java LambdaTest | Static/Slicing Dynamic | NML | iOS AnalyticsX | Multi Device"));
 
         try {
 

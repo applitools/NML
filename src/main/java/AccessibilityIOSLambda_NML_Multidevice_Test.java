@@ -106,7 +106,7 @@ public class AccessibilityIOSLambda_NML_Multidevice_Test {
         config.addMultiDeviceTarget(IosMultiDeviceTarget.iPhone_11_Pro(), IosMultiDeviceTarget.iPhone_11_Pro_Max(), IosMultiDeviceTarget.iPhone_12(), IosMultiDeviceTarget.iPhone_13_Pro_Max());
         eyes.setConfiguration(config);
 
-        eyes.setBatch(new BatchInfo("Java LambdaTest | iOS Accessibility"));
+        eyes.setBatch(new BatchInfo("Java LambdaTest | Static/Slicing Dynamic | NML | iOS Accessibility | Multi Device"));
 
         try {
 
