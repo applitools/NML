@@ -1,8 +1,12 @@
 # java-appium-nml-android-multi-device-saucelabs
 
-Java Appium + Applitools NML — Android on Sauce Labs (multi-device variant).
+## Environment variables
 
-Ported from `java-android-nml-lambdatest_old` (LambdaTest reference implementation).
+- `APPLITOOLS_API_KEY`
+- `SAUCE_USERNAME`
+- `SAUCE_ACCESS_KEY`
+- `SAUCE_REGION`
+- `FLOW`
 
 ## Run
 
@@ -10,4 +14,8 @@ Ported from `java-android-nml-lambdatest_old` (LambdaTest reference implementati
 mvn compile exec:java
 ```
 
-APPLITOOLS_API_KEY, SAUCE_USERNAME, SAUCE_ACCESS_KEY, and SAUCE_REGION (optional, default us-west-1) must be set as environment variables before running. The AnalyticsX app id is a placeholder (`storage:filename=AnalyticsX_XMLLayout.apk`) that needs a real AnalyticsX APK uploaded to Sauce Labs app storage.
+Runs `AnalyticsXAndroidSauceLabsMultidevice_Test` by default. For `AccessibilityAndroidSauceLabsMultidevice_Test`:
+
+```
+mvn compile exec:java -Dexec.mainClass=AccessibilityAndroidSauceLabsMultidevice_Test
+```
