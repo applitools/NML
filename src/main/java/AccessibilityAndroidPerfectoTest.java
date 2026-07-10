@@ -95,7 +95,7 @@ public class AccessibilityAndroidPerfectoTest {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Perfecto | NML | Accessibility"));
+        config.setBatch(new BatchInfo("Java Perfecto | NML | Android Accessibility"));
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);

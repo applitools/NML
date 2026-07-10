@@ -107,7 +107,7 @@ public class AnalyticsXAndroidPerfectoTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Perfecto | NML | AnalyticsX"));
+        config.setBatch(new BatchInfo("Java Perfecto | NML | Android AnalyticsX"));
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);
