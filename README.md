@@ -17,3 +17,13 @@ Runs `AnalyticsXAndroidBrowserStackTest` by default. For `AccessibilityAndroidBr
 ```
 mvn compile exec:java -Dexec.mainClass=AccessibilityAndroidBrowserStackTest
 ```
+
+## Upload application to BrowserStack
+
+```
+curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
+  -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+  -F "file=@/path/to/YourApp.apk"
+```
+
+Response: `{"app_url":"bs://<app_id>"}`
