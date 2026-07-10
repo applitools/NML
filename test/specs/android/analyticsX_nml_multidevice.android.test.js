@@ -12,7 +12,7 @@ describe('AnalyticsX Android NML - BrowserStack', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS BrowserStack | Slicing Instrument | Android AnalyticsX | NML Multi Device'));
+    config.setBatch(new BatchInfo('JS BrowserStack | NML | Android AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget('Galaxy S25', 'Galaxy S25 Ultra', 'Pixel 9');
     eyes.setConfiguration(config);
 
