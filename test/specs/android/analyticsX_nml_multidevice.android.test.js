@@ -13,7 +13,7 @@ describe('AnalyticsX Android NML - Perfecto', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS Perfecto | NML | AnalyticsX | Multi Device'));
+    config.setBatch(new BatchInfo('JS Perfecto | NML | Android AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget("Galaxy S25","Galaxy S25 Ultra","Pixel 9");
         
     eyes.setConfiguration(config);
