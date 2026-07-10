@@ -117,7 +117,7 @@ public class AnalyticsXIOSLambdaTest {
         eyes.setConfiguration(config);
 
 
-        eyes.setBatch(new BatchInfo("Java LambdaTest | NML | iOS AnalyticsX"));
+        eyes.setBatch(new BatchInfo("Java LambdaTest | Static/Slicing Dynamic | NML | iOS AnalyticsX"));
 
         try {
 

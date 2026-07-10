@@ -102,7 +102,7 @@ public class AccessibilityIOSLambdaTest {
         config.setSendDom(true);
         eyes.setConfiguration(config);
 
-        eyes.setBatch(new BatchInfo("Java LambdaTest | NML | iOS Accessibility"));
+        eyes.setBatch(new BatchInfo("Java LambdaTest | Static/Slicing Dynamic | NML | iOS Accessibility"));
 
         try {
 
