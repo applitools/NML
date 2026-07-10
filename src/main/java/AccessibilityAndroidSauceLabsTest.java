@@ -102,7 +102,7 @@ public class AccessibilityAndroidSauceLabsTest {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Sauce Labs | Android Accessibility"));
+        config.setBatch(new BatchInfo("Java SauceLabs | NML | Android Accessibility"));
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);

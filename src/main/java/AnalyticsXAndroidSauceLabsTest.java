@@ -112,7 +112,7 @@ public class AnalyticsXAndroidSauceLabsTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Sauce Labs | Android AnalyticsX"));
+        config.setBatch(new BatchInfo("Java SauceLabs | NML | Android AnalyticsX"));
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);
