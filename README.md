@@ -1,11 +1,23 @@
 # javascript-wdio-appium-nml-android-multi-device-lambdatest
 
-## Run
+## Environment variables
 
+- `APPLITOOLS_API_KEY`
+- `LT_USERNAME`
+- `LT_ACCESS_KEY`
+- `LT_APP_ANALYTICSX`
+- `ANALYTICSX_APP_PACKAGE`
+- `ANALYTICSX_APP_ACTIVITY`
+- `LT_APP_ACCESSIBILITY`
+- `ACCESSIBILITY_APP_PACKAGE`
+- `ACCESSIBILITY_APP_ACTIVITY`
+- `ACTIVE_APP`
+- `DEVICE_NAME`
+- `PLATFORM_VERSION`
+- `FLOW`
+
+## Run
 
 ```
 npx wdio run ./wdio.android.lambdatest.conf.js
 ```
-
-
-Fill in `.env` with your own credentials before running (see `.env.example`).
