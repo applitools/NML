@@ -95,7 +95,7 @@ public class AccessibilityAndroidPerfectoMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Perfecto | NML | Accessibility | Multi Device"));
+        config.setBatch(new BatchInfo("Java Perfecto | NML | Android Accessibility | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25(), AndroidMultiDeviceTarget.Galaxy_S25_Ultra(), AndroidMultiDeviceTarget.Pixel_9());

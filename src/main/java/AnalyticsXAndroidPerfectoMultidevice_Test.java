@@ -106,7 +106,7 @@ public class AnalyticsXAndroidPerfectoMultidevice_Test {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Perfecto | NML | AnalyticsX | Multi Device"));
+        config.setBatch(new BatchInfo("Java Perfecto | NML | Android AnalyticsX | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25(), AndroidMultiDeviceTarget.Galaxy_S25_Ultra(), AndroidMultiDeviceTarget.Pixel_9());
