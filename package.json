@@ -1,0 +1,13 @@
+{
+  "name": "maestro-eyes-nml",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node run.mjs"
+  },
+  "dependencies": {
+    "@applitools/eyes-webdriverio": "^5.60.0",
+    "webdriverio": "^9.8.0",
+    "dotenv": "^16.0.0"
+  }
+}

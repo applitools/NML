@@ -1,0 +1,6 @@
+node_modules/
+.env
+.maestro-session.json
+.caps-tmp.json
+applitools-logs/
+.DS_Store

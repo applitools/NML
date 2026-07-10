@@ -1,0 +1,66 @@
+appId: testing.AnalyticsXUIKit
+name: AnalyticsX — Eyes NML
+---
+# Maestro Runner + Appium + Eyes WDIO SDK + NML native capture.
+# Each runScript call POSTs to the capture server which triggers eyes.check()
+# with NML — Applitools captures the native element hierarchy for visual matching.
+# Run with: node run.mjs
+
+- launchApp
+
+- waitForAnimationToEnd
+
+# ── Login Screen ───────────────────────────────────────────────────────────────
+- assertVisible:
+    id: loginTitle
+
+- runScript:
+    file: ./capture.js
+    env:
+      SCREENSHOT_NAME: Login Screen
+
+- scrollUntilVisible:
+    element:
+      id: loginButton
+
+- tapOn:
+    id: loginButton
+
+# ── Flow Selector ──────────────────────────────────────────────────────────────
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: flowSelectorTitle
+
+- runScript:
+    file: ./capture.js
+    env:
+      SCREENSHOT_NAME: Flow Selector
+
+# ── Dashboard ──────────────────────────────────────────────────────────────────
+- tapOn:
+    id: fullFlowCard
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: dashboardTitle
+
+- runScript:
+    file: ./capture.js
+    env:
+      SCREENSHOT_NAME: Dashboard
+
+# ── Visual AI Playground ───────────────────────────────────────────────────────
+- tapOn:
+    id: visualAIPlaygroundCard
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: playgroundTitle
+
+- runScript:
+    file: ./capture.js
+    env:
+      SCREENSHOT_NAME: Visual AI Playground
