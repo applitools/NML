@@ -14,7 +14,7 @@ describe('Accessibility Android NML - BrowserStack', () => {
     config.setApiKey(process.env.APPLITOOLS_API_KEY as string);
     config.setUseDom(true);
     config.setSendDom(true);
-    config.setBatch(new BatchInfo('TS BrowserStack | Static / Slicing Dynamic | NML Multi Device | Android Accessibility'));
+    config.setBatch(new BatchInfo('TS BrowserStack | NML | Android Accessibility | Multi Device'));
     config.addMultiDeviceTarget('Galaxy S25', 'Galaxy S25 Ultra', 'Pixel 9');
     eyes.setConfiguration(config);
 
