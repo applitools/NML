@@ -10,7 +10,7 @@ describe('AnalyticsX Android NML - Local', () => {
      eyes.setLogHandler({ type: 'file', filename: './logs/eyes_local.log' });
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS Local | Android AnalyticsX'));
+    eyes.setBatch(new BatchInfo('JS Local | NML | Android AnalyticsX'));
     await eyes.open(browser, 'Local Android AnalyticsX App', 'Android AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
