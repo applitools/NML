@@ -17,7 +17,7 @@ describe('Accessibility iOS NML - Local', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Local | Static / Slicing Dynamic | iOS Accessibility'));
+    eyes.setBatch(new BatchInfo('TS Local | NML | iOS Accessibility | Multi Device'));
 
     await eyes.open(browser, 'Local iOS Accessibility App', 'iOS Accessibility Validation');
     console.log('Eyes open');
