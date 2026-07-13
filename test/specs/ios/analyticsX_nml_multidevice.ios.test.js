@@ -11,7 +11,7 @@ describe('AnalyticsX iOS NML - Local', () => {
      eyes.setLogHandler({ type: 'file', filename: './logs/eyes_local.log' });
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS Local | Slicing Instrument | iOS AnalyticsX | NML MUlti Device'));
+    config.setBatch(new BatchInfo('JS Local | NML | iOS AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget("iPhone 15 Pro Max", "iPhone 11 Pro", "iPhone 13");
     eyes.setConfiguration(config);
 
