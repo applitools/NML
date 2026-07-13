@@ -3,17 +3,17 @@
 Branches are named by test vendor/environment, then language, framework, and platform:
 
 ```
-<vendor-or-local>/<language>-<framework>-<platform>[-multi-device][-plug-and-play]
+<vendor-or-local>[-plug-and-play]/<language>-<framework>-<platform>[-multi-device]
 ```
 
 ### Boilerplate vs. Plug-and-Play
 
 Every combination below comes in two variants:
 
-- **Boilerplate** (plain branch name, e.g. `browserstack/javascript-wdio-appium-ios`) — a starter template with no application bundled. Add your credentials and point `APP_ID` (and, for Android, `APP_PACKAGE`/`APP_ACTIVITY`) at your own app, then adapt the test to your own screens.
-- **Plug-and-play** (`-plug-and-play` suffix, e.g. `browserstack/javascript-wdio-appium-ios-plug-and-play`) — add your credentials to `.env` (or as environment variables) and you're ready to go against the sample application already wired in.
+- **Boilerplate** (plain vendor name, e.g. `browserstack/javascript-wdio-appium-ios`) — a starter template with no application bundled. Add your credentials and point `APP_ID` (and, for Android, `APP_PACKAGE`/`APP_ACTIVITY`) at your own app, then adapt the test to your own screens.
+- **Plug-and-play** (`-plug-and-play` suffix on the vendor, e.g. `browserstack-plug-and-play/javascript-wdio-appium-ios`) — add your credentials to `.env` (or as environment variables) and you're ready to go against the sample application already wired in.
 
-> **Exception:** `lambdatest/java-appium-ios`, `lambdatest/java-appium-ios-multi-device`, `lambdatest/java-appium-android`, and `lambdatest/java-appium-android-multi-device` currently only exist as `-plug-and-play`; the boilerplate variant hasn't been built yet for these four.
+> **Exception:** `lambdatest/java-appium-ios`, `lambdatest/java-appium-ios-multi-device`, `lambdatest/java-appium-android`, and `lambdatest/java-appium-android-multi-device` don't exist yet — only their `lambdatest-plug-and-play/...` counterparts do; the boilerplate variant hasn't been built for these four.
 
 ### Sample Applications
 
