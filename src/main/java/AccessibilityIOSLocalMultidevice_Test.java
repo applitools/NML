@@ -106,7 +106,7 @@ public class AccessibilityIOSLocalMultidevice_Test {
 
         eyes.setConfiguration(config);
 
-        eyes.setBatch(new BatchInfo("Java Local | iOS Accessibility"));
+        eyes.setBatch(new BatchInfo("Java Local | NML | iOS Accessibility | Multi Device"));
 
         try {
 
