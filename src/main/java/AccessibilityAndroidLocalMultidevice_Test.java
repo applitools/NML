@@ -92,7 +92,7 @@ public class AccessibilityAndroidLocalMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Local | Android Accessibility"));
+        config.setBatch(new BatchInfo("Java Local | NML | Android Accessibility | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25(), AndroidMultiDeviceTarget.Galaxy_S25_Ultra(), AndroidMultiDeviceTarget.Pixel_9());
