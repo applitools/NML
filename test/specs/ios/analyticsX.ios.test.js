@@ -9,7 +9,7 @@ describe('AnalyticsX iOS NML - Local', () => {
     eyes = new Eyes();
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_local.log' });
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS Local | Slicing Instrument | iOS AnalyticsX'));
+    eyes.setBatch(new BatchInfo('JS Local | NML | iOS AnalyticsX'));
     await eyes.open(browser, 'Local iOS AnalyticsX App', 'iOS AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });

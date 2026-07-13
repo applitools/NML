@@ -12,7 +12,7 @@ describe('Accessibility iOS NML - Local', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS Local | Slicing Instrument | iOS Accessibility'));
+    eyes.setBatch(new BatchInfo('JS Local | NML | iOS Accessibility'));
 
     await eyes.open(browser, 'Local iOS Accessibility App', 'iOS Accessibility Validation');
     console.log('Eyes open');
