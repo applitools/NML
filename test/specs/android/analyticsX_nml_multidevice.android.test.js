@@ -13,7 +13,7 @@ describe('AnalyticsX Android NML - Local', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS Local | Android AnalyticsX'));
+    config.setBatch(new BatchInfo('JS Local | NML | Android AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget("Galaxy S25");
         
     eyes.setConfiguration(config);

@@ -14,7 +14,7 @@ describe('Accessibility Android NML - Local', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS Local | Slicing Instrument | Android Accessibility'));
+    eyes.setBatch(new BatchInfo('JS Local | NML | Android Accessibility | Multi Device'));
 
     await driver.pause(5000);
 
