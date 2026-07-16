@@ -153,4 +153,14 @@ Sample applications (iOS Native and Android Native) are available in the **main*
 
 ### Maestro
 
-Maestro does not support direct Eyes SDK integration or Appium, so its NML support is a workaround built on the Maestro runner rather than a native integration like the suites above. See `maestro-local/ios-nml-workaround` in [applitools/nml-boilerplate](https://github.com/applitools/nml-boilerplate).
+  maestro-local/ios-nml-workaround
+
+Maestro does not support direct Eyes SDK integration or Appium, so its NML support is a workaround built on the Maestro runner rather than a native integration like the suites above.
+
+### Native (no Appium/NML)
+
+  espresso-local/android-test-xmllayout — Android Espresso test against an XML-layout app.
+
+  xcuitest-local/ios-uikit — iOS XCUITest against a UIKit app.
+
+> These three branches (Maestro, Espresso, XCUITest) don't have a boilerplate/plug-and-play split — they're kept identically in both this repo and [applitools/nml-boilerplate](https://github.com/applitools/nml-boilerplate).
