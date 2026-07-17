@@ -1,13 +1,15 @@
-import { Eyes, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
 
 const FLOW = process.env.FLOW ?? 'full';
 
 describe('AnalyticsX Android NML - Multi Device', () => {
   let eyes: Eyes;
+  let runner: ClassicRunner;
   let config: Configuration;
 
   before(async () => {
-    eyes = new Eyes();
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
 
     config = new Configuration();
