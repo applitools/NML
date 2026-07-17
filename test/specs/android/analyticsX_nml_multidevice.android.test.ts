@@ -8,16 +8,16 @@ describe('AnalyticsX Android NML - Multi Device', () => {
 
   before(async () => {
     eyes = new Eyes();
-    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY as string);
     config.setBatch(new BatchInfo('TS SauceLabs | NML | Android AnalyticsX | Multi Device'));
-    config.addMultiDeviceTarget('Galaxy S25');
+    config.addMultiDeviceTarget('Galaxy S25', 'Galaxy S25 Ultra', 'Pixel 9');
 
     eyes.setConfiguration(config);
 
-    await eyes.open(browser, 'LambdaTest Android AnalyticsX App', 'Android AnalyticsX Validation');
+    await eyes.open(browser, 'SauceLabs Android AnalyticsX App', 'Android AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
 

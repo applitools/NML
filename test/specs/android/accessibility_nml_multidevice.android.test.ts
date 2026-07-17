@@ -1,16 +1,16 @@
-import { Eyes, Target, BatchInfo, Configuration, AndroidMultiDeviceTarget } from '@applitools/eyes-webdriverio';
+import { Eyes, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
 
 describe('Accessibility Android NML - Multi Device', () => {
   let eyes: Eyes;
 
   before(async () => {
     eyes = new Eyes();
-    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
 
     const config = new Configuration();
     config.setUseDom(true);
     config.setSendDom(true);
-    config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25);
+    config.addMultiDeviceTarget('Galaxy S25', 'Galaxy S25 Ultra', 'Pixel 9');
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
@@ -18,7 +18,7 @@ describe('Accessibility Android NML - Multi Device', () => {
 
     await driver.pause(5000);
 
-    await eyes.open(browser, 'LambdaTest Android Accessibility App', 'Android Accessibility Validation');
+    await eyes.open(browser, 'SauceLabs Android Accessibility App', 'Android Accessibility Validation');
     console.log('Eyes open');
   });
 
