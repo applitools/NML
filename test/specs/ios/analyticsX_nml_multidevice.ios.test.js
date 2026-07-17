@@ -8,7 +8,7 @@ describe('AnalyticsX iOS NML - BrowserStack', () => {
   before(async () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_browserstack.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_browserstack.log' });
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
     config.setBatch(new BatchInfo('JS BrowserStack | NML | iOS AnalyticsX | Multi Device'));
