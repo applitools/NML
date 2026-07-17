@@ -1,12 +1,13 @@
-import { Eyes, Target, BatchInfo } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo } from '@applitools/eyes-webdriverio';
 
 const FLOW = process.env.FLOW ?? 'full';
 
 describe('AnalyticsX iOS NML - Perfecto', () => {
-  let eyes;
+  let eyes, runner;
 
   before(async () => {
-    eyes = new Eyes();
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_perfecto.log' });
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
     eyes.setBatch(new BatchInfo('JS Perfecto | Static/Slicing Dynamic | NML | iOS AnalyticsX'));
