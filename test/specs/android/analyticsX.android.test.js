@@ -10,7 +10,7 @@ describe('AnalyticsX Android NML - LambdaTest', () => {
 
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_analyticsX_lambdatest.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
     eyes.setBatch(new BatchInfo('JS LambdaTest | NML | Android AnalyticsX'));
