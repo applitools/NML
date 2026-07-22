@@ -76,9 +76,9 @@ public class AnalyticsXAndroidBrowserStackTest {
 
         // ── NML ─────────────────────────────────────────────────────────────
         // Eyes.setMobileCapabilities injects BOTH optionalIntentArguments (Android)
-        // AND processArguments (iOS). On BrowserStack, appium:optionalIntentArguments
-        // stays a PLAIN top-level Appium capability (no vendor nesting needed)
-        // — we only need to drop the iOS-only processArguments cap.
+        // AND processArguments (iOS), unconditionally, regardless of platform. On
+        // BrowserStack neither needs vendor-options nesting, so both stay as plain
+        // top-level Appium capabilities, left as-is.
         Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
