@@ -53,6 +53,7 @@ public class AnalyticsXAndroidPerfectoTest {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey             = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl          = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String perfectoCloudName = System.getenv("PERFECTO_CLOUD_NAME");
         String perfectoToken     = System.getenv("PERFECTO_SECURITY_TOKEN");
 
@@ -76,7 +77,7 @@ public class AnalyticsXAndroidPerfectoTest {
         // AND processArguments (iOS). On Perfecto, appium:optionalIntentArguments
         // stays a PLAIN top-level Appium capability (no vendor nesting needed)
         // — we only need to drop the iOS-only processArguments cap.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -107,6 +108,9 @@ public class AnalyticsXAndroidPerfectoTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java Perfecto | NML | Android AnalyticsX"));
         config.setUseDom(true);
         config.setSendDom(true);
