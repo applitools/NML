@@ -40,7 +40,6 @@ const caps = Eyes.setMobileCapabilities<Record<string, unknown>>({
 
 // Step 2: appium:processArguments is iOS-only — drop it for an Android run
 // (no vendor nesting needed on BrowserStack — optionalIntentArguments stays top-level).
-delete caps['appium:processArguments'];
 
 // Step 3: Attach bstack:options
 // NOTE: BrowserStack requires pre-uploading the .apk via their REST API; you cannot
