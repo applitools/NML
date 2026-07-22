@@ -35,6 +35,7 @@ public class AccessibilityIOSPerfectoMultidevice_Test {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey            = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl         = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String perfectoCloudName = System.getenv("PERFECTO_CLOUD_NAME");
         String perfectoToken     = System.getenv("PERFECTO_SECURITY_TOKEN");
 
@@ -51,7 +52,7 @@ public class AccessibilityIOSPerfectoMultidevice_Test {
 
         System.out.println("Capabilities set");
 
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -81,6 +82,9 @@ public class AccessibilityIOSPerfectoMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setUseDom(true);
         config.setSendDom(true);
 
