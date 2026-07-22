@@ -55,6 +55,7 @@ public class AnalyticsXIOSLocalMultidevice_Test {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
 
         // Toggle: IOS_TARGET=real runs against a physically connected iPhone
         // (Appium auto-detects the UDID; set IOS_UDID to target a specific
@@ -87,7 +88,7 @@ public class AnalyticsXIOSLocalMultidevice_Test {
         // Eyes.setMobileCapabilities injects appium:processArguments. A local
         // Appium server needs no vendor-specific nesting, so it stays a plain
         // top-level Appium capability.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -110,6 +111,9 @@ public class AnalyticsXIOSLocalMultidevice_Test {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(IosMultiDeviceTarget.iPhone_11_Pro(), IosMultiDeviceTarget.iPhone_11_Pro_Max());
