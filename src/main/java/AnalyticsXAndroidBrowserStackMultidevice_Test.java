@@ -82,8 +82,6 @@ public class AnalyticsXAndroidBrowserStackMultidevice_Test {
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
-        capabilities.setCapability("appium:processArguments", (Object) null);
-
         // ── Attach bstack:options ──────────────────────────────────────────────
         Map<String, Object> bstackOptions = new HashMap<>();
         bstackOptions.put("userName",      bstackUsername);
