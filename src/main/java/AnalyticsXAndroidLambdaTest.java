@@ -92,8 +92,6 @@ public class AnalyticsXAndroidLambdaTest {
             ltOptions.put("optionalIntentArguments", intentArguments);
             capabilities.setCapability("appium:optionalIntentArguments", (Object) null);
         }
-        // iOS cap not needed for Android
-        capabilities.setCapability("appium:processArguments", (Object) null);
 
         capabilities.setCapability("lt:options", ltOptions);
 
