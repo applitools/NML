@@ -54,6 +54,7 @@ public class AnalyticsXAndroidLocalTest {
 
         // ── Credentials / device config ────────────────────────────────────
         String apiKey           = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl        = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String avdName          = Optional.ofNullable(System.getenv("AVD_NAME")).orElse("Pixel_8_API_35");
         String platformVersion  = Optional.ofNullable(System.getenv("PLATFORM_VERSION")).orElse("15.0");
 
@@ -77,7 +78,7 @@ public class AnalyticsXAndroidLocalTest {
         // AND processArguments (iOS). Against a local Appium server there is no vendor
         // options object at all — optionalIntentArguments stays a plain top-level
         // Appium capability — we only need to drop the iOS-only processArguments cap.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -102,6 +103,9 @@ public class AnalyticsXAndroidLocalTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java Local | NML | Android AnalyticsX"));
         config.setUseDom(true);
         config.setSendDom(true);
