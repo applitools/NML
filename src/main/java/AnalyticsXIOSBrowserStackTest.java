@@ -51,6 +51,7 @@ public class AnalyticsXIOSBrowserStackTest {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey                = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl             = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String browserStackUsername  = System.getenv("BROWSERSTACK_USERNAME");
         String browserStackAccessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
@@ -68,7 +69,7 @@ public class AnalyticsXIOSBrowserStackTest {
         System.out.println("Capabilities set");
 
         // ── NML ─────────────────────────────────────────────────────────────
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -101,6 +102,9 @@ public class AnalyticsXIOSBrowserStackTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);
