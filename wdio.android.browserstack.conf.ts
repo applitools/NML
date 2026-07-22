@@ -38,8 +38,8 @@ const caps = Eyes.setMobileCapabilities<Record<string, unknown>>({
   'appium:newCommandTimeout': 300,
 }, process.env.APPLITOOLS_API_KEY as ConfigurationPlain);
 
-// appium:processArguments is iOS-only — Eyes.setMobileCapabilities injects it
-// alongside optionalIntentArguments, so drop it for an Android run.
+// appium:processArguments is iOS-only, but Eyes.setMobileCapabilities() injects it
+// alongside optionalIntentArguments regardless of platform. Left as-is here.
 
 // Attach bstack:options
 // NOTE: BrowserStack requires pre-uploading the .apk via their REST API; you cannot
